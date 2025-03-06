@@ -55,7 +55,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  
   //Список дел
   final List<String> items = [];
 
@@ -66,9 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
 
-      items.add('Важное дело № $_counter');
+      items.add('Важное дело № ${items.length + 1}');
     });
   }
 
@@ -128,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Text(
-              '$_counter',
+              'Количество: ${items.length}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
@@ -136,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addItem,
-        tooltip: 'Добавить задачу',
+        tooltip: 'Добавить',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
